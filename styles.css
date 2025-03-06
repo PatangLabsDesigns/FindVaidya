@@ -140,11 +140,41 @@ a:hover{
 }
 
 
-@media only screen and (max-width: 600px) {
-    .container{
-        padding: 36px 20px;
+@media only screen and (max-width: 900px) {
+    #logo{
+        width: 80px;
+        height: auto;
     }
+    
     h1{
-        font-size: 32px;
+        font-size: 36px;
+    }
+    
+    p{
+        text-align: center;
+    }
+    .navbar{
+        padding: 16px 16px;
+    }
+    
+    .mainbody{
+        padding: 32px 16px;
+        gap: 32px;
+    }
+
+    .GridContainer{
+        flex-direction: column;
+        max-width: auto;
+    }
+    .footer{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 16px 16px;
+        gap: 16px;
+        border-top: 1px solid;
+        border-color: #D1D5DB;
+        align-items: center;
+        color: #6B7280;
     }
   }
