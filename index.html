@@ -3,100 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="FindVaidyaLogo.png">
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.png">
+    <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&family=DM+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
-   
+
     <!-- HTML Meta Tags -->
-    <title>Find Vaidya</title>
-    <meta name="description" content="Connecting patients with trusted doctors seamlessly!">
-  <style>
-    *{
-    margin: 0;
-    padding: 0;
-}
+    <title>Find Trusted Doctors Near You | Launching Soon</title>
+    <meta name="description" content="FindVaidya is your go-to platform to connect with verified doctors effortlessly. Launching soon! Doctors can register now, and users can subscribe for updates. Stay connected for more.">
 
-body{
-    height: 100vh;
-    width: 100vw;
-    background-color: #f4f4f5;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items:center;
-    gap: 32px;
-    color: #042033;
-    padding: 60px 60px;
-}
-
-h1{
-    font-family: "DM Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 48px;
-    text-align: center;
-}
-      p{
-    font-family: "DM Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 16px;
-}
-
-a{
-    text-decoration: none;
-    color: #069BF1;
-    Font-family: "DM Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 500;
-    font-style: normal;
-    font-size: 16px;
-}
-
-a:hover{
-    font-weight: 600;
-}
-@media only screen and (max-width: 600px) {
-    .container{
-        padding: 36px 20px;
-    }
-    h1{
-        font-size: 32px;
-    }
-  }
-  </style>
-<!-- 
-    <meta property="og:url" content="https://www.patanglabs.design/">
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://www.findvaidya.com/">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Patang Labs is Ready to Soar!">
-    <meta property="og:description" content="Patang Labs is where creativity meets precision. We craft bold, innovative designs that help brands soar. Stay tuned—we’re launching soon!">
-    <meta property="og:image" content="https://opengraph.b-cdn.net/production/images/394904b7-1137-46d1-8677-cd78f3486658.png?token=yIRIumHFRFirGZCCj0Yhy6Mj5bUJb11_L0wghiFr5uk&height=744&width=1194&expires=33277258473">
+    <meta property="og:title" content="Find Trusted Doctors Near You | Launching Soon">
+    <meta property="og:description" content="FindVaidya is your go-to platform to connect with verified doctors effortlessly. Launching soon! Doctors can register now, and users can subscribe for updates. Stay connected for more.">
+    <meta property="og:image" content="https://opengraph.b-cdn.net/production/images/6ddfbd69-5a4f-4ac2-a30f-b5b6fc4e87ce.png?token=uyrlLbIuFnfqhL-ntxkUEG7FQPw59fURfSJzCBORuCw&height=630&width=1200&expires=33277296259">
 
+    <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta property="twitter:domain" content="patanglabs.design">
-    <meta property="twitter:url" content="https://www.patanglabs.design/">
-    <meta name="twitter:title" content="Patang Labs is Ready to Soar!">
-    <meta name="twitter:description" content="Patang Labs is where creativity meets precision. We craft bold, innovative designs that help brands soar. Stay tuned—we’re launching soon!">
-    <meta name="twitter:image" content="https://opengraph.b-cdn.net/production/images/394904b7-1137-46d1-8677-cd78f3486658.png?token=yIRIumHFRFirGZCCj0Yhy6Mj5bUJb11_L0wghiFr5uk&height=744&width=1194&expires=33277258473">
- -->
+    <meta property="twitter:domain" content="findvaidya.com">
+    <meta property="twitter:url" content="https://www.findvaidya.com/">
+    <meta name="twitter:title" content="Find Trusted Doctors Near You | Launching Soon">
+    <meta name="twitter:description" content="FindVaidya is your go-to platform to connect with verified doctors effortlessly. Launching soon! Doctors can register now, and users can subscribe for updates. Stay connected for more.">
+    <meta name="twitter:image" content="https://opengraph.b-cdn.net/production/images/6ddfbd69-5a4f-4ac2-a30f-b5b6fc4e87ce.png?token=uyrlLbIuFnfqhL-ntxkUEG7FQPw59fURfSJzCBORuCw&height=630&width=1200&expires=33277296259">
+
 </head>
 <body>
     <div class="container">
-        <img src="FindVaidyaLogo.png" width=120px />
-        <h1>Find Vaidya is under development.</h1>
-        <p>📩 <a href="mailto:contact@pfindvaidya.com">contact@findvaidya.com</a></p>
+        <div class="navbar">
+            <img src="./assets/logo.png" id="logo" alt="FindVaidya Logo"/>
+        </div>
+        <div class="mainbody">
+            <div>
+                <h1>Find Trusted Doctors Near You<br>Launching Soon!</h1>
+                <p>Your health matters. FindVaidya is here to connect you with verified doctors effortlessly.</p>
+            </div>
+            <div class="GridContainer">
+                <div class="GridCard">
+                    <h2>Are You a Doctor?</h2>
+                    <p>Join our growing network of trusted healthcare professionals. Register now to be part of FindVaidya and reach patients easily.</p>
+                    <a href="http://" target="_blank" rel="noopener noreferrer" class="PrimaryButton">Register as a Doctor</a>
+                </div>
+                <div class="GridCard">
+                    <h2>Stay Updated!</h2>
+                    <p>Be the first to know when we launch! Subscribe for updates and get exclusive access to FindVaidya’s features.</p>
+                    <a href="http://" target="_blank" rel="noopener noreferrer" class="SecondaryButton">Subscribe for Updates</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <p>Copyright © 2025, FindVaidya. All rights reserved.</p>
+            <p>📩 <a href="mailto:contact@pfindvaidya.com">contact@findvaidya.com</a></p>
+            <p>Design Partner <a href="http://patanglabs.design" target="_blank" rel="noopener noreferrer" id="partner">Patang Labs</a></p>
+        </div>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
