@@ -106,7 +106,7 @@ a:hover{
     flex-direction: row;
     flex-wrap: nowrap;
     gap: 16px;
-    max-width: 900px;
+    max-width: 480px;
 }
 .GridCard{
     display: flex;
