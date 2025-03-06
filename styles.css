@@ -90,7 +90,15 @@ a:hover{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 32px;
+    gap: 64px;
+}
+
+.sectionTitle{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
 }
 
 .GridContainer{
