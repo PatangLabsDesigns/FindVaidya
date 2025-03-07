@@ -252,7 +252,8 @@ const medicalSpecialties = [
     
     // Add timestamp for security
     formObject.timestamp = new Date().toISOString();
-    
+    formObject.submissionId = getUniqueSubmissionId();
+
     // Show loading state
     const submitButton = form.querySelector('button[type="submit"]');
     const originalText = submitButton.textContent;
@@ -381,6 +382,18 @@ const medicalSpecialties = [
     }
     
     return true;
+  }
+  function getUniqueSubmissionId() {
+    // Get current timestamp
+    const timestamp = new Date().getTime();
+    
+    // Get or initialize a counter from localStorage
+    let counter = parseInt(localStorage.getItem('submissionCounter') || '1000');
+    counter++;
+    localStorage.setItem('submissionCounter', counter.toString());
+    
+    // Create a unique ID combining timestamp and counter
+    return `FV-${timestamp}-${counter}`;
   }
   
   /**
