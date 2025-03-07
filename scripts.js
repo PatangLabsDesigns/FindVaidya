@@ -4,6 +4,9 @@
  */
 
 // Medical specialties list (alphabetically sorted)
+
+const webHook = 'https://hook.eu2.make.com/59g8i0q2cdvgkokkh3dmxnjhtsz8b7ca';
+
 const medicalSpecialties = [
     "Ayurvedic Medicine",
     "Allergy and Immunology",
@@ -404,7 +407,7 @@ const medicalSpecialties = [
     // Send data to Make.com webhook
     // Note: In production, it's better to proxy this request through your own server
     // to keep the webhook URL private and add additional security measures
-    fetch('https://hook.eu2.make.com/7414b8h5yvwqlyk3mz20kea9owlfieoi',requestOptions)
+    fetch(webHook,requestOptions)
     .then(response => {
         // Check if response is OK without trying to parse JSON
         if (response.ok) {
