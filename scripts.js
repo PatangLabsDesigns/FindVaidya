@@ -373,8 +373,7 @@ const medicalSpecialties = [
         if (data.success) {
             // Show success message
             form.innerHTML = `
-                <section class="GridContainer">
-                <article class="GridCard">
+                <article class="success-message">
                   <h2>Registration Successful!</h2>
                   <p>Thank you for registering with FindVaidya. We'll review your information and get back to you soon.</p>
                   <a href="index.html" class="SecondaryButton">Back to Home</a>
