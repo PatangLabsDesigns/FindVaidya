@@ -404,13 +404,7 @@ const medicalSpecialties = [
     // Send data to Make.com webhook
     // Note: In production, it's better to proxy this request through your own server
     // to keep the webhook URL private and add additional security measures
-    fetch('https://hook.eu2.make.com/7414b8h5yvwqlyk3mz20kea9owlfieoi', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data)
-    })
+    fetch('https://hook.eu2.make.com/7414b8h5yvwqlyk3mz20kea9owlfieoi',requestOptions)
     .then(response => {
         // Check if response is OK without trying to parse JSON
         if (response.ok) {
