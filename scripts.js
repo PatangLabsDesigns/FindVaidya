@@ -265,6 +265,55 @@ const medicalSpecialties = [
    * @returns {boolean} - Whether the form is valid
    */
   function validateForm() {
+    // Validate first name (required)
+  const firstName = document.getElementById('firstName');
+  if (!firstName.value.trim()) {
+    firstName.setCustomValidity('Please enter your first name');
+    firstName.reportValidity();
+    return false;
+  } else {
+    firstName.setCustomValidity('');
+  }
+  
+  // Validate last name (required)
+  const lastName = document.getElementById('lastName');
+  if (!lastName.value.trim()) {
+    lastName.setCustomValidity('Please enter your last name');
+    lastName.reportValidity();
+    return false;
+  } else {
+    lastName.setCustomValidity('');
+  }
+  
+  // Validate clinic name (required)
+  const clinicName = document.getElementById('clinicName');
+  if (!clinicName.value.trim()) {
+    clinicName.setCustomValidity('Please enter your clinic/hospital name');
+    clinicName.reportValidity();
+    return false;
+  } else {
+    clinicName.setCustomValidity('');
+  }
+  
+  // Validate city (required)
+  const city = document.getElementById('city');
+  if (!city.value.trim()) {
+    city.setCustomValidity('Please enter your city');
+    city.reportValidity();
+    return false;
+  } else {
+    city.setCustomValidity('');
+  }
+  
+  // Validate pincode (required and should be 6 digits)
+  const pincode = document.getElementById('pincode');
+  if (!pincode.value.trim() || pincode.value.length !== 6 || !/^\d+$/.test(pincode.value)) {
+    pincode.setCustomValidity('Please enter a valid 6-digit pincode');
+    pincode.reportValidity();
+    return false;
+  } else {
+    pincode.setCustomValidity('');
+  }
     // Validate email
     const email = document.getElementById('email');
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
