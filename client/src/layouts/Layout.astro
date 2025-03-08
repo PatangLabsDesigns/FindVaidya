@@ -1,0 +1,45 @@
+---                               
+import './src/styles/global.css' 
+import NavBar from "../components/NavBar.astro";
+import Footer from "../components/Footer.astro";
+
+const { pageTitle } = Astro.props;
+const { title, subtitle } = Astro.props; // Props for dynamic page titles
+---   
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&family=DM+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href="/src/styles/global.css" />
+            <!-- Primary Meta Tags -->
+            <title>{pageTitle ? `${pageTitle} | FindVaidya - Find Trusted Doctors Near You` : "FindVaidya - Find Trusted Doctors Near You"}</title>
+            <meta name="description" content="FindVaidya is your upcoming go-to platform to connect with verified doctors. Doctors can register now and simplify your healthcare journey.">
+            <meta name="keywords" content="find doctors near you, trusted doctors directory, doctor registration platform, healthcare platform, connect with doctors, FindVaidya, find vaidya">
+            <!-- Open Graph / Facebook Meta Tags -->
+            <meta property="og:url" content="https://www.findvaidya.com/">
+            <meta property="og:type" content="website">
+            <meta property="og:title" content="FindVaidya - Find Trusted Doctors Near You | Launching Soon">
+            <meta property="og:description" content="FindVaidya is your upcoming go-to platform to connect with verified doctors. Doctors can register now and simplify your healthcare journey.">
+            <meta property="og:image" content="/assets/OGImage.png">
+            <!-- Twitter Meta Tags -->
+            <meta name="twitter:card" content="summary_large_image">
+            <meta property="twitter:domain" content="findvaidya.com">
+            <meta property="twitter:url" content="https://www.findvaidya.com/">
+            <meta name="twitter:title" content="FindVaidya - Find Trusted Doctors Near You | Launching Soon">
+            <meta name="twitter:description" content="FindVaidya is your upcoming go-to platform to connect with verified doctors. Doctors can register now and simplify your healthcare journey.">
+            <meta name="twitter:image" content="/assets/OGImage.png">
+	</head>
+	<body class="bg-background font-sans text-text font-normal">
+		<NavBar />
+                  <main class="flex flex-col gap-12 justify-center items-center py-16 w-full px-4 md:px-xxl">
+		            <slot />
+                  </main>
+		<Footer />
+	</body>
+</html>
