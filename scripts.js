@@ -229,40 +229,30 @@ const medicalSpecialties = [
    */
   function submitForm(event) {
     event.preventDefault();
-    
     const form = document.getElementById('doctorRegistrationForm');
     
-    // Perform validations
+    // Disable the button to prevent multiple submissions
+    const submitButton = form.querySelector('button[type="submit"]');
+    submitButton.disabled = true;
+
     if (!validateForm()) {
-      return;
+        submitButton.disabled = false; // Re-enable on validation failure
+        return;
     }
-    
-    // If all validations pass, prepare form data
+
     const formData = new FormData(form);
     const formObject = {};
     
     formData.forEach((value, key) => {
-      // For phone, prepend +91
-      if (key === 'phone') {
-        formObject[key] = `+91${value}`;
-      } else {
-        formObject[key] = value;
-      }
+        formObject[key] = key === 'phone' ? `+91${value}` : value;
     });
-    
-    // Add timestamp for security
+
     formObject.timestamp = new Date().toISOString();
     formObject.submissionId = getUniqueSubmissionId();
 
-    // Show loading state
-    const submitButton = form.querySelector('button[type="submit"]');
-    const originalText = submitButton.textContent;
-    submitButton.textContent = 'Submitting...';
-    submitButton.disabled = true;
-    
-    // Send data to Make.com webhook
-    sendDataSecurely(formObject, submitButton, originalText, form);
-  }
+    sendDataSecurely(formObject, submitButton, 'Submit', form);
+}
+
   
   /**
    * Validates all form fields
