@@ -1,0 +1,8 @@
+---
+const { title, subtitle } = Astro.props; 
+---
+
+<section class="flex flex-col content-center items-center gap-md text-center">
+    <h1 class="text-3xl font-bold leading-11 text-dark md:text-5xl md:leading-16 " set:html={title}></h1>
+    <p class="text-sm text-text md:text-base" set:html={subtitle}></p>
+ </section>
