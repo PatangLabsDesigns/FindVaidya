@@ -384,16 +384,13 @@ const medicalSpecialties = [
     return true;
   }
   function getUniqueSubmissionId() {
-    // Get current timestamp
-    const timestamp = new Date().getTime();
-    
     // Get or initialize a counter from localStorage
     let counter = parseInt(localStorage.getItem('submissionCounter') || '1000');
     counter++;
     localStorage.setItem('submissionCounter', counter.toString());
     
     // Create a unique ID combining timestamp and counter
-    return `FV-${timestamp}-${counter}`;
+    return `FV-${counter}`;
   }
   
   /**
