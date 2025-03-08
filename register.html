@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- Character set and viewport configuration -->
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- Favicon -->
+      <link rel="icon" type="image/x-icon" href="./assets/favicon.png">
+      <!-- Stylesheets -->
+      <link rel="stylesheet" href="styles.css">
+      <!-- Google Fonts preconnect for performance -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&family=DM+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+      <!-- Primary Meta Tags -->
+      <title>Register Your Practice - FindVaidya</title>
+      <meta name="description" content="Join FindVaidya's network of trusted doctors. Register your practice for free and connect with patients easily.">
+      <meta name="keywords" content="doctor registration, healthcare platform, list your practice, FindVaidya, find vaidya">
+      <!-- Open Graph / Facebook Meta Tags -->
+      <meta property="og:url" content="https://www.findvaidya.com/register">
+      <meta property="og:type" content="website">
+      <meta property="og:title" content="Register Your Practice - FindVaidya">
+      <meta property="og:description" content="Join FindVaidya's network of trusted doctors. Register your practice for free and connect with patients easily.">
+      <meta property="og:image" content="/assets/OGImage.png">
+      <!-- Twitter Meta Tags -->
+      <meta name="twitter:card" content="summary_large_image">
+      <meta property="twitter:domain" content="findvaidya.com">
+      <meta property="twitter:url" content="https://www.findvaidya.com/register">
+      <meta name="twitter:title" content="Register Your Practice - FindVaidya">
+      <meta name="twitter:description" content="Join FindVaidya's network of trusted doctors. Register your practice for free and connect with patients easily.">
+      <meta name="twitter:image" content="/assets/OGImage.png">
+   </head>
+   <body>
+      <!-- Main container -->
+      <div class="container">
+         <!-- Navigation bar -->
+         <header class="navbar">
+            <a href="index.html" aria-label="FindVaidya Home">
+            <img src="./assets/logo.png" id="logo" alt="FindVaidya Logo"/>
+            </a>
+            <nav>
+               <a href="register.html" class="activeButton nav-cta " aria-label="Register as a doctor">List your Practice for Free</a>
+            </nav>
+         </header>
+         <!-- Main content -->
+         <main class="mainbody">
+            <!-- Page title section -->
+            <section class="sectionTitle">
+               <h1>Register Your Practice For Free</h1>
+               <p>Join our growing network of trusted healthcare professionals. Register now for <strong>free</strong> to be part of FindVaidya and reach patients easily.</p>
+            </section>
+            <!-- Registration form -->
+            <section class="form-container">
+               <!-- Form with client-side validation -->
+               <form id="doctorRegistrationForm" onsubmit="submitForm(event)" novalidate>
+                  <!-- Name fields (first and last name) -->
+                  <div class="form-row">
+                     <div class="form-group">
+                        <label for="firstName">First Name*</label>
+                        <input type="text" id="firstName" name="firstName" required aria-required="true">
+                     </div>
+                     <div class="form-group">
+                        <label for="lastName">Last Name*</label>
+                        <input type="text" id="lastName" name="lastName" required aria-required="true">
+                     </div>
+                  </div>
+                  <!-- Contact information (email and phone) -->
+                  <div class="form-row">
+                     <div class="form-group">
+                        <label for="email">Email Address*</label>
+                        <input type="email" id="email" name="email" required aria-required="true">
+                     </div>
+                     <div class="form-group">
+                        <label for="phone">Phone Number*</label>
+                        <div class="phone-input-container">
+                           <span class="phone-prefix" aria-hidden="true">+91</span>
+                           <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" maxlength="10" placeholder="10 digit number" aria-required="true">
+                        </div>
+                     </div>
+                  </div>
+                  <!-- Medical specialization selection -->
+                  <div class="form-group">
+                     <label for="specialization">Specialization*</label>
+                     <div class="multiselect-container">
+                        <input type="text" id="specializationSearch" placeholder="Search specializations...">
+                        <div id="specializationDropdown" class="multiselect-dropdown"></div>
+                        <div id="selectedSpecializations" class="selected-items"></div>
+                        <input type="hidden" id="specialization" name="specialization" required>
+                     </div>
+                  </div>
+                  <!-- Practice information -->
+                  <div class="form-group">
+                     <label for="clinicName">Clinic/Hospital Name*</label>
+                     <input type="text" id="clinicName" name="clinicName" required aria-required="true">
+                  </div>
+                  <div class="form-group">
+                     <label for="address">Clinic Address</label>
+                     <input type="text" id="address" name="address">
+                  </div>
+                  <!-- Location information -->
+                  <div class="form-row">
+                     <div class="form-group">
+                        <label for="city">City*</label>
+                        <input type="text" id="city" name="city" required aria-required="true">
+                     </div>
+                     <div class="form-group">
+                        <label for="pincode">Pincode*</label>
+                        <input type="text" id="pincode" name="pincode" required pattern="[0-9]{6}" maxlength="6" aria-required="true">
+                     </div>
+                  </div>
+                  <div class="form-group">
+                     <label for="state">State*</label>
+                     <select id="state" name="state" required aria-required="true">
+                        <option value="" disabled selected>Select State</option>
+                        <!-- Indian states alphabetically ordered -->
+                        <option value="Andhra Pradesh">Andhra Pradesh</option>
+                        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                        <option value="Assam">Assam</option>
+                        <option value="Bihar">Bihar</option>
+                        <option value="Chhattisgarh">Chhattisgarh</option>
+                        <option value="Goa">Goa</option>
+                        <option value="Gujarat">Gujarat</option>
+                        <option value="Haryana">Haryana</option>
+                        <option value="Himachal Pradesh">Himachal Pradesh</option>
+                        <option value="Jharkhand">Jharkhand</option>
+                        <option value="Karnataka">Karnataka</option>
+                        <option value="Kerala">Kerala</option>
+                        <option value="Madhya Pradesh">Madhya Pradesh</option>
+                        <option value="Maharashtra">Maharashtra</option>
+                        <option value="Manipur">Manipur</option>
+                        <option value="Meghalaya">Meghalaya</option>
+                        <option value="Mizoram">Mizoram</option>
+                        <option value="Nagaland">Nagaland</option>
+                        <option value="Odisha">Odisha</option>
+                        <option value="Punjab">Punjab</option>
+                        <option value="Rajasthan">Rajasthan</option>
+                        <option value="Sikkim">Sikkim</option>
+                        <option value="Tamil Nadu">Tamil Nadu</option>
+                        <option value="Telangana">Telangana</option>
+                        <option value="Tripura">Tripura</option>
+                        <option value="Uttar Pradesh">Uttar Pradesh</option>
+                        <option value="Uttarakhand">Uttarakhand</option>
+                        <option value="West Bengal">West Bengal</option>
+                        <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                        <option value="Chandigarh">Chandigarh</option>
+                        <option value="Dadra and Nagar Haveli and Daman and Diu">Dadra and Nagar Haveli and Daman and Diu</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                        <option value="Ladakh">Ladakh</option>
+                        <option value="Lakshadweep">Lakshadweep</option>
+                        <option value="Puducherry">Puducherry</option>
+                     </select>
+                  </div>
+                  <!-- Professional credentials -->
+                  <div class="form-row">
+                     <div class="form-group">
+                        <label for="registrationNumber">Medical Registration Number*</label>
+                        <input type="text" id="registrationNumber" name="registrationNumber" required aria-required="true">
+                        <small class="form-hint">Enter your state medical council registration number</small>
+                     </div>
+                     <div class="form-group">
+                        <label for="registrationYear">Registration Year*</label>
+                        <input type="number" id="registrationYear" name="registrationYear" required min="1950" max="2025" aria-required="true">
+                     </div>
+                  </div>
+                  <!-- Terms and conditions -->
+                  <div class="form-group terms-container">
+                     <div class="terms-box">
+                        <div class="terms-header">
+                           <input type="checkbox" id="termsCheckbox" name="termsAccepted" required aria-required="true">
+                           <label for="termsCheckbox">I accept the Terms and Conditions</label>
+                        </div>
+                        <div class="terms-content">
+                           <div class="terms-scrollable">
+                              <!-- Terms and conditions content -->
+                              <h3>Terms and Conditions</h3>
+                              <h4>Introduction</h4>
+                              <p><strong>Purpose:</strong> These Terms and Conditions govern the collection, storage, and use of information provided by doctors who register with FindVaidya. By submitting your information, you agree to be bound by these terms.</p>
+                              <p><strong>Scope:</strong> These terms apply to all doctors who provide their details for registration on FindVaidya's platform.</p>
+                              <h4>Information Collection</h4>
+                              <p><strong>Details Required:</strong></p>
+                              <p>Doctors are required to provide accurate and complete information, including but not limited to:</p>
+                              <ul>
+                                 <li>Full Name</li>
+                                 <li>Contact Information (Email, Phone Number)</li>
+                                 <li>Medical Specialties</li>
+                                 <li>Qualifications and Certifications</li>
+                                 <li>Clinic/Hospital Address</li>
+                                 <li>Availability Schedule</li>
+                              </ul>
+                              <p>Additional optional details may include consultation fees, experience, and languages spoken.</p>
+                              <p><strong>Accuracy of Information:</strong></p>
+                              <ul>
+                                 <li>Doctors must ensure that all information provided during registration is accurate and up-to-date.</li>
+                                 <li>Any changes to the provided information must be promptly communicated to FindVaidya.</li>
+                              </ul>
+                              <h4>Use of Information</h4>
+                              <p><strong>Purpose:</strong></p>
+                              <ul>
+                                 <li>The information collected will be used solely for the purpose of listing doctors on FindVaidya's platform, connecting them with patients, and facilitating communication between doctors and users.</li>
+                                 <li>Contact details may be used to notify doctors about updates, promotional activities, or operational changes related to the platform.</li>
+                              </ul>
+                              <p><strong>Communication:</strong></p>
+                              <p>By providing contact details, doctors consent to being contacted via email, phone calls, SMS, or other electronic means for purposes such as:</p>
+                              <ul>
+                                 <li>Verification of information.</li>
+                                 <li>Updates regarding their profile listing.</li>
+                                 <li>Notifications about patient inquiries or appointments.</li>
+                              </ul>
+                              <p><strong>Privacy:</strong></p>
+                              <ul>
+                                 <li>FindVaidya will ensure that all personal and professional information provided by doctors is stored securely and used in accordance with applicable privacy laws.</li>
+                                 <li>FindVaidya will not share or sell doctor information to third parties without explicit consent.</li>
+                              </ul>
+                              <h4>Doctor Obligations</h4>
+                              <p><strong>Professional Conduct:</strong></p>
+                              <ul>
+                                 <li>Doctors must ensure that they maintain necessary licenses and certifications required to practice medicine in their jurisdiction.</li>
+                                 <li>Doctors must provide accurate medical advice and services in accordance with their qualifications.</li>
+                              </ul>
+                              <p><strong>Updates:</strong></p>
+                              <p>Doctors are responsible for keeping their profile updated with accurate information regarding specialties, clinic/hospital location, availability schedules, etc.</p>
+                              <p><strong>Consent:</strong></p>
+                              <p>Doctors agree that their name, profile details (e.g., specialties, qualifications), and clinic/hospital address may be displayed publicly on FindVaidya's platform.</p>
+                              <h4>FindVaidya's Obligations</h4>
+                              <p><strong>Data Security:</strong></p>
+                              <p>FindVaidya will implement appropriate measures to protect doctor data from unauthorized access or breaches.</p>
+                              <p><strong>Platform Updates:</strong></p>
+                              <p>FindVaidya reserves the right to update or modify doctor profiles based on verified changes submitted by the doctor or observed discrepancies.</p>
+                              <h4>Limitation of Liability</h4>
+                              <p><strong>Accuracy of Listings:</strong></p>
+                              <p>While FindVaidya will make reasonable efforts to verify doctor profiles before listing them on the platform, it does not guarantee the accuracy or completeness of the information provided by doctors.</p>
+                              <p><strong>Patient Interaction:</strong></p>
+                              <p>FindVaidya is not liable for any disputes arising between doctors and patients regarding consultations or services.</p>
+                              <h4>Termination</h4>
+                              <p><strong>Voluntary Removal:</strong></p>
+                              <p>Doctors may request removal of their profile from FindVaidya's platform at any time by contacting support at contact@findvaidya.com.</p>
+                              <p><strong>Breach of Terms:</strong></p>
+                              <p>FindVaidya reserves the right to remove a doctor's profile if they breach these terms or provide false/misleading information.</p>
+                              <h4>Governing Law</h4>
+                              <p>These Terms shall be governed by the laws of India.</p>
+                              <p>Any disputes arising out of these Terms shall be subject to the exclusive jurisdiction of courts located in India.</p>
+                              <h4>Acceptance</h4>
+                              <p>By submitting your registration form or providing your details for listing on FindVaidya's platform, you acknowledge that you have read, understood, and agree to these Terms and Conditions.</p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <!-- Form submission -->
+                  <div class="form-submit">
+                     <button type="submit" class="PrimaryButton">Submit Registration</button>
+                  </div>
+               </form>
+            </section>
+            
+         </main>
+         <!-- Footer section -->
+         <footer class="footer">
+            <p>Copyright © 2025, FindVaidya. All rights reserved.</p>
+            <p>An initiative by: Supriya Pande ☎️ <a href="tel:+919561200200" aria-label="Call Supriya Pande">+91 9561 200 200</a> 📩 <a href="mailto:contact@findvaidya.com" aria-label="Email FindVaidya">contact@findvaidya.com</a></p>
+            <p>Design Partner <a href="http://patanglabs.design" target="_blank" rel="noopener noreferrer" id="partner" aria-label="Visit Patang Labs website">Patang Labs</a></p>
+         </footer>
+      </div>
+      <!-- Scripts -->
+      <script src="scripts.js"></script>
+   </body>
+</html>
